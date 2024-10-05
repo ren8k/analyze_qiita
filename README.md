@@ -27,7 +27,7 @@ cd src
   - `START_DATE`: 集計開始日時
   - `END_DATE`: 集計終了日時
 
-```python:config.py
+```python
 from datetime import datetime, timezone
 from typing import Final
 
@@ -87,7 +87,7 @@ python main.py
   - タグ
 - 統計情報を更新
 
-```python: analyzer.py
+```python
 def get_article_stats() -> Tuple[List[Dict[str, Any]], int, int, int, int]:
     all_views: int = 0
     all_likes: int = 0
