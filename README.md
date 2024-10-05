@@ -6,7 +6,7 @@
 
 > [!IMPORTANT]
 > 本実装の解説記事を公開しています．是非ご覧ください．
-> \n
+> <br>
 > [Qiita 投稿記事の閲覧数・のいいね数の分析](https://qiita.com/ren8k/private/a90c4c0b5b5a62cbe6c5)
 
 ## 利用方法
