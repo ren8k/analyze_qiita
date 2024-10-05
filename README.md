@@ -4,6 +4,8 @@
 
 上記の目的を達成するために，Qiita API を利用して，Qiita 投稿記事のいいね数・閲覧数などを取得し，集計する Python スクリプトを作成しました．集計コードは以下で公開しています．
 
+https://github.com/ren8k/analyze_qiita
+
 ## 利用方法
 
 - コードの clone し，`src` ディレクトリに移動
