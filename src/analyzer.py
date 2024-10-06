@@ -20,7 +20,6 @@ def get_article_stats() -> Tuple[List[Dict[str, Any]], int, int, int, int]:
     page: int = 1
     while True:
         items: List[Dict[str, Any]] = get_user_items(page)
-        time.sleep(1)
         if not items:
             break
 
@@ -50,6 +49,7 @@ def get_article_stats() -> Tuple[List[Dict[str, Any]], int, int, int, int]:
         if len(items) < PER_PAGE:
             break  # 最後のページであればループを終了
         page += 1
+        time.sleep(1)
 
     return articles, all_views, all_likes, all_stocks, items_count
 
