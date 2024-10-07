@@ -110,13 +110,9 @@ def get_article_stats() -> Tuple[List[Dict[str, Any]], int, int, int, int]:
             if not is_within_date_range(created_at) or item["private"]:
                 continue
 
-            item_details: Dict[str, Any] = get_item_details(item["id"])
-            page_views: int = item_details["page_views_count"]
-
-            all_views += page_views
+            all_views += item["page_views_count"]
             all_likes += item["likes_count"]
             all_stocks += item["stocks_count"]
-            tags: str = ", ".join([tag["name"] for tag in item["tags"]])
             items_count += 1
 
             articles.append(
@@ -124,15 +120,16 @@ def get_article_stats() -> Tuple[List[Dict[str, Any]], int, int, int, int]:
                     "title": item["title"],
                     "likes": item["likes_count"],
                     "stocks": item["stocks_count"],
-                    "views": page_views,
+                    "views": item["page_views_count"],
                     "created_at": created_at.strftime("%Y-%m-%d"),
-                    "tags": tags,
+                    "tags": ", ".join([tag["name"] for tag in item["tags"]]),
                 }
             )
 
         if len(items) < PER_PAGE:
             break  # 最後のページであればループを終了
         page += 1
+        time.sleep(1)
 
     return articles, all_views, all_likes, all_stocks, items_count
 ```
